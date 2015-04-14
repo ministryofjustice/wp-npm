@@ -1,0 +1,125 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+.banner {
+  .navbar-header {
+    height: 125px;
+    .navbar-brand {
+      .hide-text();
+      background: url('../../assets/images/national-preventive-mechanism-logo.png') no-repeat;
+      display: block;
+      width: 93px;
+      height: 100px;
+      margin: 10px 0 0 30px;
+      padding: 0;
+    }
+    .navbar-toggle {
+      margin-top: 40px;
+      .icon-bar {
+        background: #ccc;
+        width: 30px;
+        height: 4px;
+
+        &+.icon-bar {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  .nav {
+    margin: 0 -15px;
+    text-transform: uppercase;
+    font-size: 17px;
+    .open>a, .open>a:focus, .open>a:hover,
+    > .active>a, > .active>a:focus, > .active>a:hover,
+    > li > a:hover, > li > a:focus  {
+      background: lighten(@brand-primary, 10%);
+      color: #fff;
+    }
+    > li > a {
+      color: #333;
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-menu {
+      padding: 0;
+    }
+  }
+}
+
+.jumbotron {
+  background: @brand-primary;
+  border-bottom: 5px solid lighten(@brand-primary, 10%);
+  color:#fff;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 38px;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 21px;
+  }
+
+  iframe {
+    border: 10px solid #fff;
+  }
+
+  &.title {
+    padding: 22px 0;
+    h1 {
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 28px
+    }
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .banner {
+    .navbar-header {
+      height: 120px;
+      .navbar-brand {
+        margin-left: 0;
+      }
+    }
+    .nav {
+      font-size: 13px;
+      .open>a, .open>a:focus, .open>a:hover,
+      > .active>a, > .active>a:focus, > .active>a:hover,
+      > li > a:hover, > li > a:focus  {
+        border-bottom: 5px solid lighten(@brand-primary, 10%);
+        background: none;
+        color: #333;
+      }
+      > li > a {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border: none;
+      }
+      .dropdown-menu {
+        border-radius: 0;
+        border: none;
+        border-bottom: 5px solid lighten(@brand-primary, 10%);
+        box-shadow: none;
+        > li > a {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+  .banner {
+    .nav {
+      font-size: 17px;
+    }
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { }
+
+

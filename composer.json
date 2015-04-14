@@ -45,7 +45,10 @@
     "vlucas/phpdotenv": "1.0.9",
     "johnpbloch/wordpress": "4.1.1",
     "roots/soil": "3.1.0",
-    "roots/wp-stage-switcher": "1.0.3"
+    "roots/wp-stage-switcher": "1.0.3",
+    "wpackagist-plugin/google-analytics-for-wordpress": "5.3.3",
+    "wpackagist-plugin/wordpress-seo": "2.0.1",
+    "wpackagist-plugin/advanced-custom-fields": "4.4.1"
   },
   "extra": {
     "installer-paths": {

@@ -10,18 +10,12 @@ use Roots\Sage\ConditionalTagCheck;
 add_theme_support('soil-clean-up');         // Enable clean up from Soil
 add_theme_support('soil-relative-urls');    // Enable relative URLs from Soil
 add_theme_support('soil-nice-search');      // Enable nice search from Soil
-add_theme_support('soil-google-analytics'); // Enable H5BP's Google Analytics snippet
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
 add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
 /**
  * Configuration values
  */
-if (!defined('GOOGLE_ANALYTICS_ID')) {
-  // Format: UA-XXXXX-Y (Note: Universal Analytics only)
-  define('GOOGLE_ANALYTICS_ID', '');
-}
-
 if (!defined('WP_ENV')) {
   // Fallback if WP_ENV isn't defined in your WordPress config
   // Used in lib/assets.php to check for 'development' or 'production'
@@ -32,6 +26,13 @@ if (!defined('DIST_DIR')) {
   // Path to the build directory for front-end assets
   define('DIST_DIR', '/dist/');
 }
+
+$envs = array(
+ 'development' => 'http://npm.dev',
+ 'staging'     => 'http://npm.staging.wpengine.com',
+ 'production'  => 'http://npm.wpengine.com'
+);
+define('ENVIRONMENTS', serialize($envs));
 
 /**
  * Define which pages shouldn't have the sidebar
@@ -68,15 +69,4 @@ function display_sidebar() {
   }
 
   return $display;
-}
-
-/**
- * $content_width is a global variable used by WordPress for max image upload sizes
- * and media embeds (in pixels).
- *
- * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
- * Default: 1140px is the default Bootstrap container width.
- */
-if (!isset($content_width)) {
-  $content_width = 1140;
 }

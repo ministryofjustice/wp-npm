@@ -1,0 +1,47 @@
+.home {
+  .boxes {
+    a {
+      display: block;
+      text-align: center;
+      padding: 50px 0;
+      background: lighten(@brand-primary, 10%);
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size:18px;
+
+      &:hover {
+        background: lighten(@brand-primary, 15%);
+      }
+    }
+  }
+  .latest-publications, .latest-news {
+    > h2 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .entry-title {
+      font-size: 24px;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        background: #efefef;
+        display: block;
+        padding: 20px;
+        margin: 10px 0;
+        text-decoration: none;
+        color:#666;
+
+        &:hover {
+          background: #ddd;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
