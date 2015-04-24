@@ -48,17 +48,18 @@
 
 .jumbotron {
   background: @brand-primary;
-  border-bottom: 5px solid lighten(@brand-primary, 10%);
+  border-bottom: 10px solid @brand-secondary;
   color:#fff;
   margin-bottom: 0;
 
   h1 {
-    font-size: 38px;
+    font-size: 36px;
+    font-weight: 600;
     margin-top: 0;
   }
 
   p {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   iframe {
@@ -89,19 +90,19 @@
       .open>a, .open>a:focus, .open>a:hover,
       > .active>a, > .active>a:focus, > .active>a:hover,
       > li > a:hover, > li > a:focus  {
-        border-bottom: 5px solid lighten(@brand-primary, 10%);
+        border-bottom: 5px solid @brand-secondary;
         background: none;
         color: #333;
       }
       > li > a {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 35px;
         border: none;
       }
       .dropdown-menu {
         border-radius: 0;
         border: none;
-        border-bottom: 5px solid lighten(@brand-primary, 10%);
+        border-bottom: 5px solid @brand-secondary;
         box-shadow: none;
         > li > a {
           padding: 10px 20px;

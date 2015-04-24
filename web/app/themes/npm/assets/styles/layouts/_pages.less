@@ -3,15 +3,16 @@
     a {
       display: block;
       text-align: center;
-      padding: 50px 0;
-      background: lighten(@brand-primary, 10%);
-      color: #fff;
+      padding: 33px 0;
+      background: @brand-secondary;
+      color: #000;
       text-decoration: none;
       margin-bottom: 20px;
-      font-size:18px;
+      font-size:22px;
+      font-weight: 600;
 
       &:hover {
-        background: lighten(@brand-primary, 15%);
+        background: lighten(@brand-secondary, 15%);
       }
     }
   }
@@ -23,6 +24,11 @@
     }
     .entry-title {
       font-size: 24px;
+      font-weight: 600;
+      color
+        a {
+          color: @brand-secondary;
+        }
     }
     ul {
       list-style: none;
