@@ -33,3 +33,17 @@ node_modules
 # Vagrant
 bin
 .vagrant
+web/app/languages/admin-en_GB.mo
+web/app/languages/admin-en_GB.po
+web/app/languages/admin-network-en_GB.mo
+web/app/languages/admin-network-en_GB.po
+web/app/languages/en_GB.mo
+web/app/languages/en_GB.po
+web/app/languages/plugins/akismet-en_GB.mo
+web/app/languages/plugins/akismet-en_GB.po
+web/app/languages/themes/twentyfifteen-en_GB.mo
+web/app/languages/themes/twentyfifteen-en_GB.po
+web/app/languages/themes/twentyfourteen-en_GB.mo
+web/app/languages/themes/twentyfourteen-en_GB.po
+web/app/languages/themes/twentythirteen-en_GB.mo
+web/app/languages/themes/twentythirteen-en_GB.po
