@@ -108,9 +108,13 @@
         > li > a {
           padding: 10px 20px;
           background: lighten(@brand-secondary, 50%);
-            &:hover {
+            &:hover, &:active, &:focus {
               background: lighten(@brand-secondary, 40%);
               } 
+        }
+        .active>a, .active>a:focus, .active>a:hover {
+            color: @dark-text;
+            background: lighten(@brand-secondary, 40%);
         }
       }
     }
