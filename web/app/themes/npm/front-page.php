@@ -1,22 +1,22 @@
 <div class="row boxes">
   <div class="col-lg-3 col-md-6">
-    <a href="">
-      About NPM
+    <a href="<?php the_field('homelink_1'); ?>">
+      <?php the_field('homelink_1_text'); ?>
     </a>
   </div>
   <div class="col-lg-3 col-md-6">
-    <a href="">
-      About OPCAT
+    <a href="<?php the_field('homelink_2'); ?>">
+      <?php the_field('homelink_2_text'); ?>
     </a>
   </div>
   <div class="col-lg-3 col-md-6">
-    <a href="">
-      About NPM Members
+    <a href="<?php the_field('homelink_3'); ?>">
+      <?php the_field('homelink_3_text'); ?>
     </a>
   </div>
   <div class="col-lg-3 col-md-6">
-    <a href="">
-      Publications
+    <a href="<?php the_field('homelink_4'); ?>">
+      <?php the_field('homelink_4_text'); ?>
     </a>
   </div>
 </div>
@@ -31,7 +31,7 @@
 
   <?php if ( $query->have_posts() ) : ?>
   <div class="col-lg-4 latest-publications">
-    <h2>Latest Publications</h2>
+    <h2><?php the_field('left_heading'); ?></h2>
     <ul>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       <li><a href="<?= get_permalink( ); ?>"><?= get_the_title( ); ?></a></li>
@@ -50,7 +50,7 @@
 
   <?php if ( $query->have_posts() ) : ?>
   <div class="col-lg-8 latest-news">
-    <h2>Recent News</h2>
+    <h2><?php the_field('right_heading'); ?></h2>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
     <?php endwhile; ?>
