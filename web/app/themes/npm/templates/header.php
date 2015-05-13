@@ -2,6 +2,7 @@
 
 <header class="banner" role="banner">
   <div class="container">
+  <div class="search"> <?php get_search_form( ); ?></div>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only"><?= __('Toggle navigation', 'sage'); ?></span>
