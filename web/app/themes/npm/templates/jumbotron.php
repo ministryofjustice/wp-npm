@@ -2,12 +2,15 @@
 <?php if(is_front_page()): ?>
 <div class="jumbotron">
   <div class="container">
-    <div class="col-lg-6">
+    <div class="col-md-6">
       <h1><?php the_field('main_heading'); ?></h1>
-      <p>The UK National Preventive Mechanism was established in 2009 to strengthen the protection of people in detention through independent monitoring.</p>
-      <p>In coordination across the four nations of the UK, the NPM focuses attention on practices in detention that could amount to ill-treatment, and works to ensure its own approaches are consistent with international standards for independent detention monitoring.</p>
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+      <?php the_content(); ?>
+      <?php endwhile; else : ?>
+  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+<?php endif; ?>
     </div>
-    <div class="col-lg-6">
+    <div class="col-md-6">
       <div class="embed-responsive embed-responsive-16by9">
         <?php _e( wp_oembed_get( get_field( 'youtube_video' ) ) ); ?>
       </div>
