@@ -43,10 +43,3 @@ function remove_upgrade_menu() {
   $page[] = remove_submenu_page( 'wpseo_dashboard', 'wpseo_licenses' );
 }
 add_action( 'admin_menu', __NAMESPACE__ . '\\remove_upgrade_menu', 999 );
-
-CustomPostType\CustomPostType::factory()
-    ->slug('publications')
-    ->labels('Publication', 'Publications')
-    ->menu_icon('dashicons-media-document')
-    ->supports(array('title', 'editor'))
-    ->create();

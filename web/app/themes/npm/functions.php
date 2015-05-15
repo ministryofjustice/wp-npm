@@ -22,6 +22,7 @@ $sage_includes = [
   'lib/custom-post-types.php',
   'lib/meta-boxes.php',
   'lib/extras.php',                // Custom functions
+  'lib/CPT.php',                // Custom post type class
 ];
 
 foreach ($sage_includes as $file) {
@@ -31,4 +32,24 @@ foreach ($sage_includes as $file) {
 
   require_once $filepath;
 }
-unset($file, $filepath);
+
+
+
+/* Register CPT for publications, with taxonomy and custom icon  */
+
+$publications = new CPT(array(
+    'post_type_name' => 'publications',
+    'singular' => 'Publication',
+    'plural' => 'Publications',
+    'slug' => 'publications'
+));
+
+$publications->register_taxonomy(array(
+    'taxonomy_name' => 'publication_type',
+    'singular' => 'Publication type',
+    'plural' => 'Publication types',
+    'slug' => 'publication_type'
+));
+
+$publications->menu_icon("dashicons-media-document");
+

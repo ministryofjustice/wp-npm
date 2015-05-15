@@ -23,8 +23,6 @@
     <h1>
     <?php if(get_post_type( get_the_ID() ) == 'post'): ?>
       News
-    <?php elseif(get_post_type( get_the_ID() ) == 'publications'): ?>
-      Publications &amp; Resources
     <?php else: ?>
       <?= Titles\title(); ?>
     <?php endif; ?>
