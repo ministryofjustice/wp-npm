@@ -11,9 +11,26 @@
 <?php endif; ?>
     </div>
     <div class="col-md-6">
-      <div class="embed-responsive embed-responsive-16by9">
+          <?php 
+
+$images = get_field('homepage_gallery');
+
+if( $images ): ?>
+    <div id="slider" class="flexslider">
+        <ul class="slides">
+            <?php foreach( $images as $image ): ?>
+                <li>
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <p class="flex-caption"><?php echo $image['caption']; ?></p>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+<?php endif; ?>
+      <!-- <div class="embed-responsive embed-responsive-16by9">
         <?php _e( wp_oembed_get( get_field( 'youtube_video' ) ) ); ?>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

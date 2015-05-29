@@ -17,6 +17,9 @@
         "styles/editor-style.less"
       ]
     },
+    "jquery.flexslider.js": {
+      "vendor": ["assets/scripts/jquery.flexslider.js"]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     },
@@ -25,6 +28,6 @@
     }
   },
   "config": {
-    "devUrl": "http://npm.dev"
+    "devUrl": "http://localhost:8888/npm/web"
   }
 }
