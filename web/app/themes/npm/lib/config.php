@@ -32,7 +32,7 @@ $envs = array(
  'staging'     => 'http://npm.staging.wpengine.com',
  'production'  => 'http://npm.wpengine.com'
 );
-define('ENVIRONMENTS', serialize($envs));
+//define('ENVIRONMENTS', serialize($envs));
 
 /**
  * Define which pages shouldn't have the sidebar
