@@ -61,7 +61,8 @@ function display_sidebar() {
       [
         'is_404',
         'is_front_page',
-        ['is_post_type_archive', ['publications']]
+        ['is_post_type_archive', ['publications']],
+        ['is_page', ['publications-resources']]
       ]
     );
 
