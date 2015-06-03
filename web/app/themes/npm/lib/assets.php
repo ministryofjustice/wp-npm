@@ -94,8 +94,14 @@ function bower_map_to_cdn($dependency, $fallback) {
 
 }
 
+
+
 function assets() {
+global $wp_styles;
+  
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
+  wp_enqueue_style( 'old-ie', asset_path('styles/old-ie.css'), false, null);
+  $wp_styles->add_data( 'old-ie', 'conditional', 'lt IE 9' );
 
   /**
    * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
