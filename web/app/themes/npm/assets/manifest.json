@@ -17,11 +17,6 @@
         "styles/editor-style.less"
       ]
     },
-    "old-ie.css": {
-      "files": [
-        "styles/old-ie.css"
-      ]
-    },
     "jquery.flexslider.js": {
       "vendor": ["assets/scripts/jquery.flexslider.js"]
     },
