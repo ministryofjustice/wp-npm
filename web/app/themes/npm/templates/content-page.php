@@ -16,7 +16,6 @@ $args = array (
   ),
 );
 
-
   $query = new WP_Query( $args ); ?>
 
   <?php if ( $query->have_posts() ) : ?>
@@ -24,6 +23,9 @@ $args = array (
     <h2>Annual reports</h2>
     <ul>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+
+}
 
       <li><a href="<?php the_field('publication_file')?>"><?= get_the_title( ); ?></a></li>
     <?php endwhile; ?>
@@ -54,7 +56,7 @@ $args = array (
     <h2>Guidance and protocols</h2>
     <ul>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-      <li><a href="<?= get_permalink( ); ?>"><?= get_the_title( ); ?></a></li>
+      <li><a href="<?php the_field('publication_file')?>"><?= get_the_title( ); ?></a></li>
     <?php endwhile; ?>
     </ul>
     <?php wp_reset_postdata(); ?>
@@ -82,7 +84,7 @@ $args = array (
     <h2>Factsheets</h2>
     <ul>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-      <li><a href="<?= get_permalink( ); ?>"><?= get_the_title( ); ?></a></li>
+      <li><a href="<?php the_field('publication_file')?>"><?= get_the_title( ); ?></a></li>
     <?php endwhile; ?>
     </ul>
     <?php wp_reset_postdata(); ?>
@@ -114,7 +116,7 @@ $args = array (
     <h2>Letters and submissions</h2>
     <ul>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-      <li><a href="<?= get_permalink( ); ?>"><?= get_the_title( ); ?></a></li>
+      <li><a href="<?php the_field('publication_file')?>"><?= get_the_title( ); ?></a></li>
     <?php endwhile; ?>
     </ul>
     <?php wp_reset_postdata(); ?>
