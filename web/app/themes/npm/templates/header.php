@@ -11,7 +11,8 @@
         <span class="icon-bar"></span>
       </button>
       <a href="<?= esc_url(home_url('/')); ?>">
-        <h1 class="navbar-brand"><?php bloginfo('name'); ?></h1>
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/npm-logo.png">
+        <span class="hidden"><h1 class="navbar-brand"><?php bloginfo('name'); ?></h1></span>
       </a>
     </div>
 
