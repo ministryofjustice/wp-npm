@@ -61,8 +61,10 @@ function display_sidebar() {
       [
         'is_404',
         'is_front_page',
+        'is_search',
         ['is_post_type_archive', ['publications']],
-        ['is_page', ['publications-resources']]
+        ['is_page', ['publications-resources']],
+        __NAMESPACE__ . '\\has_thumbnail'
       ]
     );
 
@@ -70,4 +72,14 @@ function display_sidebar() {
   }
 
   return $display;
+}
+
+function has_thumbnail() {
+  global $post;
+
+  if(empty(get_the_post_thumbnail( $post->ID ))) {
+    return true;
+  } else {
+    return false;
+  }
 }
