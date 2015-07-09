@@ -34,7 +34,8 @@
     <h2><?php the_field('left_heading'); ?></h2>
     <ul>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-      <li><a href="<?php the_field('publication_file')?>"><?= get_the_title( ); ?></a></li>
+      <?php $pdf_id = get_field('publication_file'); ?>
+      <li><a target="_blank" href="<?= wp_get_attachment_url( $pdf_id ) ?>"><?= get_the_title( ); ?></a></li>
     <?php endwhile; ?>
     </ul>
     <?php wp_reset_postdata(); ?>

@@ -11,7 +11,7 @@
             </a>
           </h4>
         </div>
-        <div id="collapse<?= $i ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?= $i ?>">
+        <div id="collapse<?= $i ?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<?= $i ?>">
           <div class="panel-body">
             <?= get_sub_field('content'); ?>
           </div>
