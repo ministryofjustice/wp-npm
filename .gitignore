@@ -1,49 +1,106 @@
-# Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-web/app/mu-plugins/*
-!web/app/mu-plugins/.gitkeep
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
-!web/app/mu-plugins/disallow-indexing.php
-!web/app/mu-plugins/register-theme-directory.php
-!web/app/mu-plugins/bedrock-autoloader.php
+# -----------------------------------------------------------------
+# .gitignore for WordPress
+# Bare Minimum Git
+# http://ironco.de/bare-minimum-git/
+# ver 20150227
+#
+# This file is tailored for a WordPress project
+# using the default directory structure
+#
+# This file specifies intentionally untracked files to ignore
+# http://git-scm.com/docs/gitignore
+#
+# NOTES:
+# The purpose of gitignore files is to ensure that certain files not
+# tracked by Git remain untracked.
+#
+# To ignore uncommitted changes in a file that is already tracked,
+# use `git update-index --assume-unchanged`.
+#
+# To stop tracking a file that is currently tracked,
+# use `git rm --cached`
+#
+# Change Log:
+# 20150227 Ignore hello.php plugin. props @damienfa
+# 20150227 Change theme ignore to wildcard twenty*. props @Z33
+# 20140606 Add .editorconfig as a tracked file
+# 20140404 Ignore database, compiled, and packaged files
+# 20140404 Header Information Updated
+# 20140402 Initially Published
+#
+# -----------------------------------------------------------------
 
-# WordPress
-web/wp
-web/.htaccess
+# ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
 
-# WP-CLI
-db-sync
-sql-dump-*.sql
+# ignore all files starting with .
+.*
 
-# Dotenv
-.env
-.env.*
-!.env.example
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
 
-# Vendor (e.g. Composer)
-vendor/*
-!vendor/.gitkeep
+# track .editorconfig file (i.e. do NOT ignore it)
+!.editorconfig
 
-# Node Package Manager
-node_modules
+# track readme.md in the root (i.e. do NOT ignore it)
+!readme.md
 
-# Vagrant
-bin
-.vagrant
-web/app/languages/admin-en_GB.mo
-web/app/languages/admin-en_GB.po
-web/app/languages/admin-network-en_GB.mo
-web/app/languages/admin-network-en_GB.po
-web/app/languages/en_GB.mo
-web/app/languages/en_GB.po
-web/app/languages/plugins/akismet-en_GB.mo
-web/app/languages/plugins/akismet-en_GB.po
-web/app/languages/themes/twentyfifteen-en_GB.mo
-web/app/languages/themes/twentyfifteen-en_GB.po
-web/app/languages/themes/twentyfourteen-en_GB.mo
-web/app/languages/themes/twentyfourteen-en_GB.po
-web/app/languages/themes/twentythirteen-en_GB.mo
-web/app/languages/themes/twentythirteen-en_GB.po
+# ignore all files that start with ~
+~*
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore everything in the "wp-content" directory, except:
+# "mu-plugins" directory
+# "plugins" directory
+# "themes" directory
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore these plugins
+wp-content/plugins/hello.php
+wp-content/plugins/index.php
+wp-content/plugins/advanced-custom-fields-pro
+wp-content/plugins/google-analytics-for-wordpress
+wp-content/plugins/soil
+wp-content/plugins/wordpress-seo
+
+# ignore specific themes
+wp-content/themes/twenty*/
+wp-content/themes/index.php
+
+# ignore node/grunt dependency directories
+node_modules/
