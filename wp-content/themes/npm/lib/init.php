@@ -27,7 +27,7 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'pdf-thumb', 370, 524, true );
+  add_image_size('pdf-thumb', 370, 524, true);
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
@@ -41,6 +41,32 @@ function setup() {
   add_editor_style(Assets\asset_path('styles/editor-style.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
+
+/**
+ * Filter thumbnail sizes that are generated for PDFs
+ *
+ * @param array $sizes
+ * @return array
+ */
+function filter_pdf_thumbnail_sizes($sizes) {
+  $sizes[] = 'pdf-thumb';
+  return $sizes;
+}
+add_filter('fallback_intermediate_image_sizes', __NAMESPACE__ . '\\filter_pdf_thumbnail_sizes');
+
+/**
+ * Filter thumbnail sizes that are generated for images
+ *
+ * @param array $sizes
+ * @return array
+ */
+function filter_image_thumbnail_sizes($sizes) {
+  if (isset($sizes['pdf-thumb'])) {
+    unset($sizes['pdf-thumb']);
+  }
+  return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', __NAMESPACE__ . '\\filter_image_thumbnail_sizes');
 
 /**
  * Register sidebars
