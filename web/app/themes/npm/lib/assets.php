@@ -63,7 +63,7 @@ function asset_path($filename) {
     $manifest = new JsonManifest($manifest_path);
   }
 
-  if (WP_ENV !== 'development' && array_key_exists($file, $manifest->get())) {
+  if (array_key_exists($file, $manifest->get())) {
     return $dist_path . $directory . $manifest->get()[$file];
   } else {
     return $dist_path . $directory . $file;
@@ -98,7 +98,7 @@ function bower_map_to_cdn($dependency, $fallback) {
 
 function assets() {
 global $wp_styles;
-  
+
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
   wp_enqueue_style( 'old-ie', asset_path('styles/old-ie.css'), false, null);
   $wp_styles->add_data( 'old-ie', 'conditional', 'lt IE 9' );
