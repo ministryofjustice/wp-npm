@@ -41,13 +41,13 @@ services:
     depends_on:
       - mysql
     environment:
-      VIRTUAL_HOST: db.jacintranet.docker
+      VIRTUAL_HOST: db.npm.docker
       PMA_USER: root
       PMA_PASSWORD: root
   mailcatcher:
     image: schickling/mailcatcher
     environment:
-      VIRTUAL_HOST: mail.jacintranet.docker
+      VIRTUAL_HOST: mail.npm.docker
       VIRTUAL_PORT: 1080
 volumes:
   database:
