@@ -26,6 +26,7 @@
         "./less/grid.less",
         "./less/forms.less",
         "./less/buttons.less",
+        "./less/component-animations.less",
         "./less/dropdowns.less",
         "./less/input-groups.less",
         "./less/navs.less",
