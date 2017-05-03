@@ -28,9 +28,6 @@ if( $images ): ?>
     </div>
 
 <?php endif; ?>
-      <!-- <div class="embed-responsive embed-responsive-16by9">
-        <?php _e( wp_oembed_get( get_field( 'youtube_video' ) ) ); ?>
-      </div> -->
     </div>
   </div>
 </div>

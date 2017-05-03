@@ -27,13 +27,6 @@ if (!defined('DIST_DIR')) {
   define('DIST_DIR', '/dist/');
 }
 
-$envs = array(
- 'development' => 'http://npm.dev',
- 'staging'     => 'http://npm.staging.wpengine.com',
- 'production'  => 'http://npm.wpengine.com'
-);
-//define('ENVIRONMENTS', serialize($envs));
-
 /**
  * Define which pages shouldn't have the sidebar
  */
@@ -64,7 +57,7 @@ function display_sidebar() {
         'is_search',
         ['is_post_type_archive', ['publications']],
         ['is_page', ['publications-resources']],
-        __NAMESPACE__ . '\\has_thumbnail'
+        __NAMESPACE__ . '\\does_not_have_post_thumbnail'
       ]
     );
 
@@ -74,12 +67,11 @@ function display_sidebar() {
   return $display;
 }
 
-function has_thumbnail() {
-  global $post;
-
-  if(empty(get_the_post_thumbnail( $post->ID ))) {
-    return true;
-  } else {
-    return false;
-  }
+/**
+ * Return true if the current $post does NOT have a post thumbnail.
+ *
+ * @return bool
+ */
+function does_not_have_post_thumbnail() {
+    return !has_post_thumbnail();
 }

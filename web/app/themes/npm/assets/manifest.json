@@ -28,6 +28,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost:8888/npm/web"
+    "devUrl": "http://npm.docker"
   }
 }
