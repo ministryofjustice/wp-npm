@@ -27,6 +27,7 @@
         "./less/forms.less",
         "./less/buttons.less",
         "./less/dropdowns.less",
+        "./less/input-groups.less",
         "./less/navs.less",
         "./less/navbar.less",
         "./less/jumbotron.less",
