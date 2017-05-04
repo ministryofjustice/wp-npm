@@ -84,10 +84,9 @@ add_action( 'admin_init', __NAMESPACE__ . '\\remove_dashboard_meta' );
  * This resolves a dependency that the snippet has on jQuery.
  */
 function move_google_analytics_to_footer() {
-    $jqueryInFooter = ( get_theme_support('soil-js-to-footer') || get_theme_support('soil-jquery-cdn') );
     $gadwpExists = function_exists('GADWP');
 
-    if (!is_admin() && $jqueryInFooter && $gadwpExists) {
+    if (!is_admin() && $gadwpExists) {
         remove_action('wp_head', array(GADWP()->tracking, 'tracking_code'), 99);
         add_action('wp_footer', array(GADWP()->tracking, 'tracking_code'), 99);
     }
