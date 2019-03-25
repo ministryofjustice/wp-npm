@@ -1,0 +1,19 @@
+.content-info {
+  background: $brand-primary;
+  border-top: 5px solid lighten($brand-primary, 10%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 50px 0;
+}
+
+#menu-footer-links li {
+	list-style: none;
+	width: auto;
+	display: inline-block;
+	margin-right: 12px;
+	 a {
+		color: $dark-text;
+		text-decoration: underline;
+		}
+}

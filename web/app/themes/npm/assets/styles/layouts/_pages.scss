@@ -1,0 +1,79 @@
+.home {
+  .boxes {
+    a {
+      display: block;
+      text-align: center;
+      padding: 33px 0;
+      background: $brand-primary;
+      color: $dark-text;
+      text-decoration: none;
+      margin-bottom: 20px;
+      font-size:22px;
+      font-weight: 600;
+
+      &:hover {
+        background: lighten($brand-primary, 15%);
+      }
+    }
+  }
+  .latest-publications, .latest-news {
+    > h2 {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .entry-title {
+      font-size: 24px;
+      font-weight: 600;
+        a {
+          color: $dark-text;
+        }
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        background: #efefef;
+        display: block;
+        padding: 20px;
+        margin: 10px 0;
+        text-decoration: none;
+        color:#666;
+
+        &:hover {
+          background: #ddd;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .entry-summary a {
+      color: $dark-text;
+
+    }
+  }
+}
+
+.pub-list {
+  .pub-thumb {
+    margin-bottom: 20px;
+    a {
+      display: block;
+      background:#ccc;
+      color:#fff
+    }
+    span {
+      padding:15px;
+      text-align: center;
+      display: block;
+      height: 74px;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

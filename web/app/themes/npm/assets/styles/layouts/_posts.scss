@@ -1,0 +1,50 @@
+.main {
+  > p:first-of-type {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 25px;
+  }
+  article {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $brand-secondary;
+    .entry-title {
+      margin-top: 0;
+    }
+  }
+}
+
+.byline.author.vcard {
+  font-size: 14px;
+  color: #8792a4;
+  margin-bottom:  10px;
+    a {
+      color: $dark-text;
+    }
+}
+
+.filters {
+  background: #f0d466;
+  color:#fff;
+  padding-bottom: 5px;
+  strong {
+    line-height: 50px;
+  }
+}
+
+.post-type-archive-publications .main article a {
+  background: #eee;
+  padding: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    background:#ddd;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
