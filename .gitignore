@@ -12,6 +12,8 @@ web/app/uploads/*
 !web/app/mu-plugins/.gitkeep
 !web/app/uploads/.gitkeep
 
+*.sql
+
 # WordPress
 web/wp
 web/.htaccess

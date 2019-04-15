@@ -8,6 +8,6 @@
     <?php wp_head(); ?>
     <!--[if lt IE 9]>
 
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/scripts/html5shiv.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/dist/js/html5shiv.js"></script>
 <![endif]-->
   </head>

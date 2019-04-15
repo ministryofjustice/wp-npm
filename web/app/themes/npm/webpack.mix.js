@@ -1,14 +1,14 @@
 const mix_ = require('laravel-mix');
 
 
-mix_.setPublicPath('./dist/')
-	.js('./assets/scripts/main.js', 'js/scripts.min.js')
-	.sass('./assets/styles/main.scss', 'css/main.min.css')
-  .css('./assets/styles/patch.css', 'css/main.min.css');
+mix_.setPublicPath('./dist')
+    .js(['assets/scripts/jquery.flexslider.js', './assets/scripts/main.js'], 'js/main.min.js')
+    .less('assets/styles/main.less', 'css/main.min.css')
+    .styles('assets/styles/old-ie.css', 'dist/css/old-ie.css');
 
 
 if (mix_.inProduction()) {
-	mix_.version();
+    mix_.version();
 } else {
-	mix_.sourceMaps();
+    mix_.sourceMaps();
 }
