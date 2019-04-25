@@ -13,7 +13,8 @@ $publication_types = array(
   'annual-reports' => 'Annual reports',
   'guidance-and-protocols' => 'Guidance and protocols',
   'factsheets' => 'Factsheets',
-  'letters-and-submissions' => 'Letters and submissions',
+  'correspondence' => 'Correspondence',
+  'submissions' => 'Submissions'
 );
 
 ?>
@@ -46,16 +47,21 @@ $publication_types = array(
             $pdf_id = get_field('publication_file');
             $pdf_url = wp_get_attachment_url($pdf_id);
             $thumb_src = wp_get_attachment_image_src($pdf_id, 'pdf-thumb');
+            $the_title = get_the_title();
 
             ?>
-            <a class="pdf-link image-link" href="<?= $pdf_url ?>" target="_blank">
+            <a class="pdf-link image-link" href="<?= $pdf_url ?>" target="_blank" title="<?= $the_title ?>">
               <img src="<?= $thumb_src[0] ?>">
-              <span><?= get_the_title() ?></span>
+              <span class="publication-title"><?php
+                  $words_num = str_word_count($the_title);
+                  $words_max = 8;
+                  echo wp_trim_words($the_title, $words_max, ($words_num > $words_max ? '...' : null));
+                  ?></span>
             </a>
           </div>
         <?php endwhile; ?>
       </div>
-      <?php wp_reset_postdata(); ?>
     </div>
   <?php endif; ?>
 <?php endforeach; ?>
+<?php wp_reset_postdata(); ?>

@@ -76,6 +76,17 @@ function asset_path($filename)
 
 function assets()
 {
+    /**
+     * Read the asset names from mix-manifest.json
+     */
+    $get_assets = file_get_contents(get_template_directory() . '/dist/mix-manifest.json');
+    $assets = json_decode($get_assets, true);
+    $assets = array(
+        'css' => '/dist' . $assets["/css/main.min.css"],
+        'js' => '/dist' . $assets["/js/main.min.js"],
+        'jquery' => '//code.jquery.com/jquery-3.3.1.min.js'
+    );
+
     global $wp_styles;
 
     wp_enqueue_style('sage_css', asset_path('/css/main.min.css'), false, null);
@@ -83,13 +94,17 @@ function assets()
     $wp_styles->add_data('old-ie', 'conditional', 'lt IE 9');
 
     /**
+     * jQuery is loaded using the same method from HTML5 Boilerplate:
      * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
-     * jQuery & Modernizr load in the footer per HTML5 Boilerplate's recommendation: http://goo.gl/nMGR7P
-     * If a plugin enqueues jQuery-dependent scripts in the head, jQuery will load in the head to meet the plugin's dependencies
-     * To explicitly load jQuery in the head, change the last wp_enqueue_script parameter to false
+     * It's kept in the header instead of footer to avoid conflicts with plugins.
      */
     if (!is_admin() && current_theme_supports('jquery-cdn')) {
-        add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', $assets['jquery'], array(), null, false);
+
+        wp_deregister_script( 'jquery-migrate' );
+        wp_register_script( 'jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array( 'jquery' ), '3.0.1', false );
+        wp_enqueue_script( 'jquery-migrate' );
     }
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
@@ -97,8 +112,8 @@ function assets()
     }
 
     //wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('sage_js', asset_path('/js/main.min.js'), [], null, true);
+    //wp_enqueue_script('jquery');
+    wp_enqueue_script('sage_js', asset_path('/js/main.min.js'), ['jquery'], null, true);
     //wp_enqueue_script('jquery.flexslider', asset_path('scripts/jquery.flexslider.js'), ['jquery'], null, true);
 }
 

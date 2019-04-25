@@ -29,4 +29,4 @@ vendor/*
 
 # Theme
 web/app/themes/npm/node_modules
-web/app/themes/npm/assets/vendor
+web/app/themes/npm/dist
