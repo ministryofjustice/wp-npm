@@ -14,7 +14,8 @@ $publication_types = array(
   'guidance-and-protocols' => 'Guidance and protocols',
   'factsheets' => 'Factsheets',
   'correspondence' => 'Correspondence',
-  'submissions' => 'Submissions'
+  'submissions' => 'Submissions',
+    'news-releases-and-statements' => 'News releases and statements'
 );
 
 ?>

@@ -59,7 +59,8 @@
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
         "wpackagist-plugin/classic-editor": "*",
         "wpackagist-plugin/fast-user-switching": "*",
-        "ministryofjustice/wp-user-roles": "*"
+        "ministryofjustice/wp-user-roles": "*",
+        "ministryofjustice/wp-moj-components": "*"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4.1"
@@ -68,7 +69,8 @@
         "installer-paths": {
             "web/app/mu-plugins/{$name}/": [
                 "type:wordpress-muplugin",
-                "ministryofjustice/wp-user-roles"
+                "ministryofjustice/wp-user-roles",
+                "ministryofjustice/wp-moj-components"
             ],
             "web/app/plugins/{$name}/": [
                 "type:wordpress-plugin"
