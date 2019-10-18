@@ -5,7 +5,6 @@ use Roots\Sage\Wrapper;
 
 ?>
 
-<?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
     <!--[if lt IE 9]>
       <div class="alert alert-warning">
@@ -14,7 +13,7 @@ use Roots\Sage\Wrapper;
     <![endif]-->
     <?php
       do_action('get_header');
-      get_template_part('templates/header');
+      get_header();
       get_template_part('templates/jumbotron');
       get_template_part('templates/filters');
     ?>
@@ -31,7 +30,7 @@ use Roots\Sage\Wrapper;
       </div><!-- /.content -->
     </div><!-- /.wrap -->
     <?php
-      get_template_part('templates/footer');
+      get_footer();
       wp_footer();
     ?>
   </body>

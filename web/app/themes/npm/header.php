@@ -1,5 +1,5 @@
 <?php use Roots\Sage\Nav\NavWalker; ?>
-
+<?php get_template_part('head'); ?>
 <header class="banner" role="banner">
   <div class="container">
   <div class="search"> <?php get_search_form( ); ?></div>
