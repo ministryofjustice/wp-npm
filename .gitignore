@@ -3,6 +3,7 @@
 
 # Mac
 .DS_*
+._DS_*
 
 # Application
 web/app/languages
@@ -33,3 +34,6 @@ vendor/*
 # Theme
 web/app/themes/npm/node_modules
 web/app/themes/npm/dist
+
+# Bin
+bin/-dev-*

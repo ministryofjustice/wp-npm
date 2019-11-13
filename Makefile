@@ -13,6 +13,10 @@ clean:
 deep-clean:
 	@if [ -d ".git" ]; then git clean -xdf; fi
 
+# Remove ALL docker images on the system
+docker-clean:
+	bin/-dev-docker-clean.sh
+
 # Run the application
 run:
 	docker-compose up
