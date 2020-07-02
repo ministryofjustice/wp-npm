@@ -76,3 +76,21 @@ function remove_dashboard_meta() {
   //remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
 }
 add_action( 'admin_init', __NAMESPACE__ . '\\remove_dashboard_meta' );
+
+function publication_update_sitemap_link($url, $post)
+{
+    if ('publications' == get_post_type($post)) {
+
+        $pdf_id = get_field('publication_file', $post->ID);
+
+
+        if (!empty($pdf_id)) {
+            $pdf_url = wp_get_attachment_url($pdf_id);
+            $url = $pdf_url;
+        }
+
+    }
+
+    return $url;
+}
+add_filter( 'wsp_cpt_link', __NAMESPACE__ . '\\publication_update_sitemap_link', 10, 2 );
