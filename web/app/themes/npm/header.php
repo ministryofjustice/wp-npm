@@ -32,6 +32,9 @@ wp_body_open();
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
     </div>
     <![endif]-->
+    <?php
+    include "lib/emergency-banner.php";
+    ?>
     <header class="banner" role="banner">
       <div class="container">
       <div class="search"> <?php get_search_form( ); ?>
