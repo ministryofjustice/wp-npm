@@ -19,6 +19,7 @@ docker-clean:
 
 # Run the application
 run:
+	@if [ ! -e ".env" ]; then cp .env.example .env; fi
 	docker-compose up
 
 # Open a bash shell on the running container
